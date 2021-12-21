@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Gustavo",
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
@@ -22,5 +22,6 @@
     "url": "https://github.com/GustavoLeck/Brook_bot/issues"
   },
   "homepage": "https://github.com/GustavoLeck/Brook_bot#readme",
+  "devDependencies": {},
   "description": ""
 }

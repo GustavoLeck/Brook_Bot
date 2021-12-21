@@ -1,12 +1,19 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const Config = require('./Config.json');
+const Discord = require("discord.js");
+const client = new Discord.Client({
+    intents: [
+        Discord.Intents.FLAGS.GUILDS,
+        Discord.Intents.FLAGS.GUILD_MESSAGE_TYPING
+    ]
+});
+
+const Config = require("./Config.json");
 
 client.login(Config.token);
 
 client.once('ready', async () =>{
     console.log('O bot foi iniciado.');
-})
+    client.user.setActivity("", {type:'LISTENING'});
+});
 
 client.on('messageCreate', () => {
     if (message.author.bot) return;
