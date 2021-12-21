@@ -1,12 +1,12 @@
 const Discord = require("discord.js")
 
 module.exports = {
-    name: "ping",
+    name: "help",
     author: "Gustavo",
 
     run: async(client, message, args) => {
 
-        let cor_da_embed = "GREEN";
+        let cor_da_embed = "daa520";
 
         let ping_do_bot = client.ws.ping;
 
