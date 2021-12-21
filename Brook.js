@@ -1,34 +1,30 @@
-const Discord = require("discord.js");
-const client = new Discord.Client({
-    intents: [
-        Discord.Intents.FLAGS.GUILDS,
-        Discord.Intents.FLAGS.GUILD_MESSAGE_TYPING
-    ]
-});
+ Discord = require("discord.js"); 
+const client = new Discord.Client({intents: 32767});
+const config = require("./config.json"); 
 
-const Config = require("./Config.json");
+client.login(config.token); 
 
-client.login(Config.token);
+client.once('ready', async () => {
 
-client.once('ready', async () =>{
-    console.log('O bot foi iniciado.');
-    client.user.setActivity("", {type:'LISTENING'});
-});
+    console.log("✅ - Estou online!")
 
-client.on('messageCreate', () => {
-    if (message.author.bot) return;
-    if (message.channel.type == 'dm')return;
-    if (!message.content.toLowerCase().startsWith(config.prefix.toLowerCase()))return;
-    if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`))return;
+})
+
+client.on('messageCreate', message => {
+     if (message.author.bot) return;
+     if (message.channel.type == 'dm') return;
+     if (!message.content.toLowerCase().startsWith(config.prefix.toLowerCase())) return;
+     if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
 
     const args = message.content
-    .trim().slice(config.prefix.length)
-    .split(/ +/g);
+        .trim().slice(config.prefix.length)
+        .split(/ +/g);
     const command = args.shift().toLowerCase();
 
-    try{
-    const commandFile = require(`.commands/${command}.js`)
-    } catch (err){
-        console.error('Erro' + err);
-    }
+    try {
+        const commandFile = require(`./commands/${command}.js`)
+        commandFile.run(client, message, args);
+    } catch (err) {
+    console.error('Erro:' + err);
+  }
 });
