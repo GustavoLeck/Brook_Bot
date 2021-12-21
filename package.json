@@ -1,7 +1,6 @@
 {
   "name": "brook",
   "version": "1.0.0",
-  "description": "",
   "main": "Brook.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,8 +10,17 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
-    "discord.js": "^12.5.3",
+    "discord.js": "^13.3.1",
     "ffmpeg-static": "^4.3.0",
     "ytdl-core": "^4.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavoLeck/Brook_bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GustavoLeck/Brook_bot/issues"
+  },
+  "homepage": "https://github.com/GustavoLeck/Brook_bot#readme",
+  "description": ""
 }
