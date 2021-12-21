@@ -6,7 +6,7 @@ module.exports = {
 
     run: async(client, message, args) => {
 
-        let cor_da_embed = "GREEN";
+        let cor_da_embed = "daa520 ";
 
         let ping_do_bot = client.ws.ping;
 
