@@ -1,26 +1,20 @@
 {
-  "name": "brook",
-  "version": "1.0.0",
-  "main": "Brook.js",
+  "name": "music-bot",
+  "main": "main.js",
+  "author": "Umut Bayraktar",
+  "description": "Discord.js V13 Compatible Umut Bayraktar Youtube Private Music Bot Codes for Shared on GitHub!",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js"
   },
-  "keywords": [],
-  "author": "Gustavo",
-  "license": "ISC",
   "dependencies": {
-    "@discordjs/opus": "^0.5.3",
-    "discord.js": "^13.3.1",
-    "ffmpeg-static": "^4.3.0",
-    "ytdl-core": "^4.5.0"
+    "discord-player": "^5.2.0",
+    "discord.js": "^13.4.0",
+    "express": "^4.17.2",
+    "ffmpeg-static": "^4.4.0",
+    "ms": "^3.0.0-canary.1",
+    "opusscript": "^0.0.8"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GustavoLeck/Brook_bot.git"
-  },
-  "bugs": {
-    "url": "https://github.com/GustavoLeck/Brook_bot/issues"
-  },
-  "homepage": "https://github.com/GustavoLeck/Brook_bot#readme",
-  "description": ""
+  "engines": {
+    "node": "16.x"
+  }
 }
