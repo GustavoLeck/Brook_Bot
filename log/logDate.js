@@ -1,108 +1,128 @@
-const base = require('./base.js');
+const description = "*"
+const dynamicDate = new Date();
+const log = '=> Comando utilizado';
+let date = dynamicDate.toGMTString()
+
 module.exports = {
 
 ping:{
-        id: 1,
-        name: "Ping",
-        description: `${base.log.description}`,
-        date: `${base.log.data}`,
-        return: '',
+    id: 1,
+    name: "Ping",
+    description: description,
+    date: date,
+    log: log
 },
 help:{
     id: 2,
     name: "Help",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 back:{
     id: 3,
     name: "Back",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log,
 },
 clear:{
     id: 4,
     name: "Clear",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 filter:{
     id: 5,
     name: "Filter",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 loop:{
     id: 6,
     name: "Loop",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 nowplaying:{
     id: 7,
     name: "Nowplaying",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 pause:{
     id: 8,
     name: "Pause",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 play:{
     id: 9,
     name: "Play",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 progress:{
     id: 10,
     name: "Progress",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 queue:{
     id: 11,
     name: "Queue",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 resume:{
     id: 12,
     name: "Resume",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 save:{
     id: 13,
     name: "Save",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 search:{
     id: 14,
     name: "Search",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 skip:{
     id: 15,
     name: "Skip",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 stop:{
     id: 16,
     name: "Stop",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 volume:{
     id: 17,
     name: "Volume",
-    description: `${base.log.description}`,
-    date: `${base.log.data}`
+    description: description,
+    date: date,
+    log: log
 },
 
 };

@@ -1,5 +1,7 @@
 const warning = require('../../config.js');
-const print = require('../../log/logConsole.js')
+const log = require('../../log/logCreator.js');
+const base = require('../../log/logDate.js');
+const aliases  = base.resume
 
 module.exports = {
     name: 'resume',
@@ -10,14 +12,13 @@ module.exports = {
     execute(client, message) {
         const queue = client.player.getQueue(message.guild.id);
 
-        const log = (`${print.return.resume}`)
-        console.log(log)
+        log.main(aliases, message.author.username, aliases.description)
 
         if (!queue) return message.channel.send(`${message.author}, ${warning.posts.NotPlaying}`);
 
         const success = queue.setPaused(false);
 
         return message.channel.send(success ? `**${queue.current.title}**, está sendo reproduzida novamente` : `${message.author}, ${warning.posts.Err}`);
-        
+
     },
 };

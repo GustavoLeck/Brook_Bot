@@ -1,6 +1,9 @@
 const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 const warning = require('../../config.js');
-const print = require('../../log/logConsole.js')
+const log = require('../../log/logCreator.js');
+const base = require('../../log/logDate.js');
+const aliases  = base.nowplaying
+const descp = '*';
 
 module.exports = {
     name: 'nowplaying',
@@ -38,8 +41,6 @@ const trackDuration = timestamp.progress == 'Forever' ? 'Endless (Live)' : track
 
         message.channel.send({ embeds: [embed], components: [row] });
 
-        const log = (`${print.return.nowplaying}`)
-        console.log(log)
-
+        log.main(aliases, message.author.username, aliases.description)
     },
 };

@@ -12,9 +12,13 @@
     "express": "^4.17.2",
     "ffmpeg-static": "^4.4.0",
     "ms": "^3.0.0-canary.1",
+    "mysql": "^2.18.1",
     "opusscript": "^0.0.8"
   },
   "engines": {
     "node": "16.x"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

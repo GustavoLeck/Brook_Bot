@@ -1,6 +1,8 @@
 const { MessageEmbed } = require('discord.js');
 const warning = require('../../config.js');
-const print = require('../../log/logConsole.js')
+const log = require('../../log/logCreator.js');
+const base = require('../../log/logDate.js');
+const aliases  = base.queue
 
 module.exports = {
     name: 'queue',
@@ -34,7 +36,6 @@ module.exports = {
 
         message.channel.send({ embeds: [embed] });
 
-        const log = (`${print.return.queue}`)
-        console.log(log)
+        log.main(aliases, message.author.username, aliases.description)
     },
 };

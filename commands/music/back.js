@@ -1,5 +1,7 @@
 const warning = require('../../config.js');
-const print = require('../../log/logConsole.js')
+const log = require('../../log/logCreator.js');
+const base = require('../../log/logDate.js');
+const aliases  = base.back;
 
 module.exports = {
     name: 'back',
@@ -18,7 +20,6 @@ module.exports = {
 
         message.channel.send(`Começando a tocar ${warning.posts.Sound} anterior...`);
         
-        const log = (`${print.return.back}`)
-        console.log(log)
+        log.main(aliases, message.author.username, aliases.description)
     },
 };

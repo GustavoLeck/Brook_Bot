@@ -1,5 +1,7 @@
 const { MessageEmbed } = require('discord.js');
-const print = require('../../log/logConsole.js')
+const log = require('../../log/logCreator.js');
+const base = require('../../log/logDate.js');
+const aliases  = base.help
 
 module.exports = {
     name: 'help',
@@ -22,8 +24,6 @@ module.exports = {
   
         message.channel.send({ embeds: [embed] });
 
-        const log = (`${help.return.ping}`)
-        console.log(log)
-
+        log.main(aliases, message.author.username, aliases.description)
     },
 };

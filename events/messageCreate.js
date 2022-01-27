@@ -21,7 +21,7 @@ module.exports = (client, message) => {
     }
 
     if (cmd && cmd.voiceChannel) {
-        if (!message.member.voice.channel) return message.channel.send(`${message.author}, vocÊ não está conectado em nenhum canal de voz.`);
+        if (!message.member.voice.channel) return message.channel.send(`${message.author}, você não está conectado em nenhum canal de voz.`);
         if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${message.author}, você não está no mesmo canal de voz do bot.`);
     }
 

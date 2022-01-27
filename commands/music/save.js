@@ -1,5 +1,7 @@
 const warning = require('../../config.js');
-const print = require('../../log/logConsole.js')
+const log = require('../../log/logCreator.js');
+const base = require('../../log/logDate.js');
+const aliases  = base.save
 
 module.exports = {
     name: 'save',
@@ -9,10 +11,8 @@ module.exports = {
 
     async execute(client, message) {
         const queue = client.player.getQueue(message.guild.id);
-
-        const log = (`${print.return.save}`)
-        console.log(log)
-
+       
+        log.main(aliases, message.author.username, aliases.description)
 
   if (!queue || !queue.playing) return message.channel.send(`${message.author}, ${warning.posts.NotPlaying}`);
 

@@ -40,7 +40,7 @@ player.on('error', (queue, error) => {
 });
 
 player.on('connectionError', (queue, error) => {
-    console.log(`I'm having trouble connecting => ${error.message}`);
+    console.log(`Tive problemas para conectar=> ${error.message}`);
 });
 
 player.on('trackStart', (queue, track) => {

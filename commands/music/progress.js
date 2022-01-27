@@ -1,6 +1,9 @@
 const { Message } = require('discord.js');
 const warning = require('../../config');
-const print = require('../../log/logConsole.js')
+const log = require('../../log/logCreator.js');
+const base = require('../../log/logDate.js');
+const aliases  = base.progress
+
 
 module.exports = {
     name: 'progress',
@@ -21,8 +24,7 @@ module.exports = {
 
         message.channel.send(`${song} \n${progress} (**${timestamp.progress}**%)`);
 
-        const log = (`${print.return.progress}`)
-        console.log(log)
+        log.main(aliases, message.author.username, aliases.description)
 
     },
 };

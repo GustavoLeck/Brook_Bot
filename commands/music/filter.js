@@ -1,4 +1,7 @@
 const warning = require('../../config.js');
+const log = require('../../log/logCreator.js');
+const base = require('../../log/logDate.js');
+const aliases  = base.filter;
 
 module.exports = {
     name: 'filter',
@@ -31,8 +34,7 @@ module.exports = {
 
         message.channel.send(`Applied: **${filter}**, Filter Status: **${queue.getFiltersEnabled().includes(filter) ? 'Active' : 'Inactive'}** ✅\n **Remember, if the music is long, the filter application time may be longer accordingly.**`);
 
-        const log = (`${print.return.filter}`)
-        console.log(log)
+        log.main(aliases, message.author.username, aliases.description)
     },
 
     

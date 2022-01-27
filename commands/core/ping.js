@@ -1,8 +1,9 @@
-const print = require('../../log/logConsole.js')
+const log = require('../../log/logCreator.js');
+const base = require('../../log/logDate.js');
+const aliases  = base.ping
 
 module.exports = {
     name: 'ping',
-    aliases: [],
     utilisation: '{prefix}ping',
 
     execute(client, message) {
@@ -13,9 +14,8 @@ module.exports = {
         }, 4000)
 
         message.channel.send(`\n ${message.author} está calculando seu ping...`);
-        
-        const log = (`${print.return.ping}`)
-        console.log(log)
+    
+        log.main(aliases, message.author.username, aliases.description)
 
     },
 };

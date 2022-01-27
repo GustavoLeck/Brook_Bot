@@ -1,6 +1,7 @@
 const warning = require('../../config.js');
-const print = require('../../log/logConsole.js')
-
+const log = require('../../log/logCreator.js');
+const base = require('../../log/logDate.js');
+const aliases  = base.clear;
 
 module.exports = {
     name: 'clear',
@@ -19,8 +20,7 @@ module.exports = {
 
         message.channel.send(`Fila evaziada com sucesso!`);
 
-        const log = (`${print.return.clear}`)
-        console.log(log)
+        log.main(aliases, message.author.username, aliases.description)
 
     },
 };

@@ -1,5 +1,7 @@
 const { QueryType } = require('discord-player');
-const print = require('../../log/logConsole.js')
+const log = require('../../log/logCreator.js');
+const base = require('../../log/logDate.js');
+const aliases  = base.play
 
 module.exports = {
     name: 'play',
@@ -34,8 +36,8 @@ if (!args[0]) return message.channel.send(`${message.author}, escreva o nome, ou
 
         if (!queue.playing) await queue.play();
 
-        const log = (`${print.return.play}`)
-        console.log(log)
+        log.main(aliases, message.author.username, res.tracks[1]['title'])
+        log.music(message.author.username, res.tracks[1])
 
     },
 };
