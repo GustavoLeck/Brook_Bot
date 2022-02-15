@@ -1,7 +1,6 @@
 const { QueryType } = require('discord-player');
 const log = require('../../log/logCreator.js');
 const base = require('../../log/logDate.js');
-const { indedefinido } = require('../../validation/validacoes.js');
 const aliases  = base.play
 
 module.exports = {
@@ -40,7 +39,7 @@ if (!args[0]) return message.channel.send(`${message.author}, escreva o nome, ou
         
         //Validação para objetos indefinidos que são chamados pela API
 
-        //Validacao para salvar na tabela LOG
+        //Validacao para salvar na tabela LOG e MUSICA
         if (res.tracks[1] == undefined) {
             log.main(aliases, message.author.username, 'indedefinido')
             console.log("Valores não disponiveis")

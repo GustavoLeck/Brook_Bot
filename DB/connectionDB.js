@@ -11,9 +11,9 @@ var mysqlConnection = mysql.createConnection({
 
 mysqlConnection.connect ((err)=>{
     if(!err)
-    console.log('DB conectado')
+    console.log('DB conectado.')
     else 
-    console.log('Não foi possivel conectar com o DB')
+    console.log('Não foi possivel conectar com o DB.')
 })
 
 module.exports = {

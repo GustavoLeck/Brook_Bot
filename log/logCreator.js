@@ -11,6 +11,10 @@ module.exports = {
         db.insertMusic(author, music)
         },
         
+    indefinido(){
+        db.insertIndefinido()
+    },
+        
     logConsole(comando, description){  
         console.log(`${comando.log}  {${comando.id} - ${comando.name}} // ${description}`)
     },  

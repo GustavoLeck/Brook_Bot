@@ -1,5 +1,5 @@
 module.exports = {
-        TOKEN: 'OTEzMTU0NjI1MjM3MDUzNTUx.YZ6XhA.X6q9n-pQZ1TEFpLob9PUM-ehnmQ', //your discord bot token
+        TOKEN: 'OTEzMTU0NjI1MjM3MDUzNTUx.YZ6XhA.K4ZXU6szcBqrd9hk2VovJb1fa6o', //your discord bot token
         px: '-',
 
     opt: {
