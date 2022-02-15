@@ -4,7 +4,9 @@ const log = '=> Comando utilizado';
 let date = dynamicDate.toGMTString()
 
 module.exports = {
-
+bot:{
+    name:"Brook"
+},
 ping:{
     id: 1,
     name: "Ping",
