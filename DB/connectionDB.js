@@ -1,6 +1,6 @@
 const { FORMERR } = require('dns');
 const mysql = require('mysql');
-const db = require("../configBD")
+const db = require("../configuracao/configBD.js")
 
 var mysqlConnection = mysql.createConnection({
     host: db.login.host,
@@ -11,9 +11,9 @@ var mysqlConnection = mysql.createConnection({
 
 mysqlConnection.connect ((err)=>{
     if(!err)
-    console.log('DB conectado.')
+    console.log('DB conectado')
     else 
-    console.log('Não foi possivel conectar com o DB.')
+    console.log('Não foi possivel conectar com o DB')
 })
 
 module.exports = {

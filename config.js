@@ -1,5 +1,7 @@
+const acesso = require('./configuracao/configToken')
+
 module.exports = {
-        TOKEN: 'OTEzMTU0NjI1MjM3MDUzNTUx.YZ6XhA.K4ZXU6szcBqrd9hk2VovJb1fa6o', //your discord bot token
+        TOKEN: acesso.bot.token, //your discord bot token
         px: '-',
 
     opt: {
