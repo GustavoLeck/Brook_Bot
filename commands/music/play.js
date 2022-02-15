@@ -1,6 +1,7 @@
 const { QueryType } = require('discord-player');
 const log = require('../../log/logCreator.js');
 const base = require('../../log/logDate.js');
+const { indedefinido } = require('../../validation/validacoes.js');
 const aliases  = base.play
 
 module.exports = {
@@ -8,6 +9,7 @@ module.exports = {
     aliases: ['p'],
     utilisation: '{prefix}play [song name/URL]',
     voiceChannel: true,
+    titulo: null,
 
     async execute(client, message, args) {
 if (!args[0]) return message.channel.send(`${message.author}, escreva o nome, ou coloque o link que você deseja ouvir depois do comando.`);
@@ -35,9 +37,18 @@ if (!args[0]) return message.channel.send(`${message.author}, escreva o nome, ou
         res.playlist ? queue.addTracks(res.tracks) : queue.addTrack(res.tracks[0]);
 
         if (!queue.playing) await queue.play();
+        
+        //Validação para objetos indefinidos que são chamados pela API
 
-        log.main(aliases, message.author.username, res.tracks[1]['title'])
-        log.music(message.author.username, res.tracks[1])
+        //Validacao para salvar na tabela LOG
+        if (res.tracks[1] == undefined) {
+            log.main(aliases, message.author.username, 'indedefinido')
+            console.log("Valores não disponiveis")
+            log.indefinido()
+          } else {
+            log.main(aliases, message.author.username, res.tracks[1]['title'])   
+            log.music(message.author.username, res.tracks[1])        
+          }
 
     },
 };
