@@ -1,8 +1,8 @@
-const acesso = require('./configuracao/configToken')
+const acesso = require('./configuracao/configBots')
 
 module.exports = {
-        TOKEN: acesso.bot.token, //your discord bot token
-        px: '-',
+        TOKEN: acesso.bot_brook.token, //your discord bot token
+        px: acesso.bot_brook.prefix,
 
     opt: {
         DJ: {
