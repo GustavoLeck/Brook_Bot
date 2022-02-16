@@ -40,13 +40,13 @@ if (!args[0]) return message.channel.send(`${message.author}, escreva o nome, ou
         //Validação para objetos indefinidos que são chamados pela API
 
         //Validacao para salvar na tabela LOG e MUSICA
-        if (res.tracks[1] == undefined) {
+        if (res.tracks[0] == undefined) {
             log.main(aliases, message.author.username, 'indedefinido')
             console.log("Valores não disponiveis")
             log.indefinido()
           } else {
-            log.main(aliases, message.author.username, res.tracks[1]['title'])   
-            log.music(message.author.username, res.tracks[1])        
+            log.main(aliases, message.author.username, res.tracks[0]['title'])   
+            log.music(message.author.username, res.tracks[0])        
           }
 
     },
