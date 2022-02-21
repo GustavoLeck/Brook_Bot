@@ -20,13 +20,10 @@ mysqlConnection.connect ((err)=>{
 module.exports = {
 
 insertLog(id, name, author,description){
-
-    console.log(`*insert log ${validacao.validacaoConteudo(description)}`)
     mysqlConnection.query(`INSERT INTO LOG (CODIGO,  BOT, NOME, AUTOR, DATE, TIME, DESCRICAO) VALUES ('${id}', '${date.bot.name}', '${name}', '${author}', current_date(), current_time(), '${validacao.validacaoConteudo(description)}');`)   
     console.log(`Registro inserido na tabela - LOG`)},
 
 insertMusic(author, music){
-    console.log(`*insert music ${validacao.validacaoConteudo(music['title'])}`)
     mysqlConnection.query(`INSERT INTO MUSICA (CODIGO,  BOT, NOME, CANAL, USUARIO, DURACAO, VISUALIZACAO, LINK) VALUES ('${music['id']}', '${date.bot.name}', '${validacao.validacaoConteudo(music['title'])}', '${validacao.validacaoConteudo(music['author'])}', '${validacao.validacaoConteudo(author)}', '${music['duration']}', '${music['views']}', '${music['url']}');`)   
     console.log(`Registro inserido na tabela - MUSICA`)},
     
