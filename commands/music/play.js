@@ -45,9 +45,7 @@ if (!args[0]) return message.channel.send(`${message.author}, escreva o nome, ou
             console.log("Valores não disponiveis")
             log.indefinido()
           } else {
-            log.main(aliases, message.author.username, res.tracks[0]['title'])   
-            log.music(message.author.username, res.tracks[0])        
+            log.main(aliases, message.author.username, res.tracks[0]['title'])       
           }
-
     },
 };

@@ -1,6 +1,7 @@
-const { Player } = require('discord-player');
+const { Player, Track } = require('discord-player');
 const { Client, Intents, Collection } = require('discord.js');
 const { readdirSync } = require('fs');
+const db = require("./DB/connectionDB");
 
 let client = new Client({
     intents: [
@@ -46,6 +47,12 @@ player.on('connectionError', (queue, error) => {
 player.on('trackStart', (queue, track) => {
     if (!client.config.opt.loopMessage && queue.repeatMode !== 0) return;
     queue.metadata.send(`Começando a tocar **${track.title}**\nCanal: **${queue.connection.channel.name}**`);
+    if (track == undefined) {
+        console.log("Valores não disponiveis")
+        log.indefinido()
+      } else {
+        db.insertMusic(queue.connection.channel.name, track)   
+      }
 });
 
 player.on('trackAdd', (queue, track) => {
