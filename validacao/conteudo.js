@@ -1,8 +1,8 @@
 module.exports = {
 
     validacaoConteudo(conteudo){
-            conteudo = conteudo.replace(/'/g,"")
-            aux = conteudo
-            return aux
+            conteudo = conteudo.replace(/'/g,""),
+            conteudo = conteudo.replace(/💔/g,"")
+            return conteudo
     }
 }
