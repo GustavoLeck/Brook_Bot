@@ -1,7 +1,4 @@
-const log = require('../../log/logCreator.js');
-const base = require('../../log/logDate.js');
-const aliases  = base.ping
-
+const controller = require("../../app/controllers/ping");
 module.exports = {
     name: 'ping',
     utilisation: '{prefix}ping',
@@ -15,7 +12,6 @@ module.exports = {
 
         message.channel.send(`\n ${message.author} está calculando seu ping...`);
     
-        log.main(aliases, message.author.username, aliases.description)
-
+        controller.ping(message.author.username)
     },
 };

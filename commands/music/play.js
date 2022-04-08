@@ -1,7 +1,5 @@
 const { QueryType } = require('discord-player');
-const log = require('../../log/logCreator.js');
-const base = require('../../log/logDate.js');
-const aliases  = base.play
+const controller = require("../../app/controllers/play");
 
 module.exports = {
     name: 'play',
@@ -36,16 +34,7 @@ if (!args[0]) return message.channel.send(`${message.author}, escreva o nome, ou
         res.playlist ? queue.addTracks(res.tracks) : queue.addTrack(res.tracks[0]);
 
         if (!queue.playing) await queue.play();
-        
-        //Validação para objetos indefinidos que são chamados pela API
 
-        //Validacao para salvar na tabela LOG e MUSICA
-        if (res.tracks[0] == undefined) {
-            log.main(aliases, message.author.username, 'indedefinido')
-            console.log("Valores não disponiveis")
-            log.indefinido()
-          } else {
-            log.main(aliases, message.author.username, res.tracks[0]['title'])       
-          }
-    },
+        controller.play(res.tracks[0], queue.connection.channel, message.author.username)
+    },              
 };

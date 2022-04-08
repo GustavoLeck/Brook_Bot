@@ -1,7 +1,5 @@
-const warning = require('../../config.js');
-const log = require('../../log/logCreator.js');
-const base = require('../../log/logDate.js');
-const aliases  = base.clear;
+const warning = require('../../config/configBot');
+const controller = require("../../app/controllers/clear");
 
 module.exports = {
     name: 'clear',
@@ -20,7 +18,6 @@ module.exports = {
 
         message.channel.send(`Fila evaziada com sucesso!`);
 
-        log.main(aliases, message.author.username, aliases.description)
-
+        controller.clear(message.author.username)
     },
 };

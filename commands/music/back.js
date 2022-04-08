@@ -1,7 +1,5 @@
-const warning = require('../../config.js');
-const log = require('../../log/logCreator.js');
-const base = require('../../log/logDate.js');
-const aliases  = base.back;
+const warning = require('../../config/configBot');
+const controller = require("../../app/controllers/back");
 
 module.exports = {
     name: 'back',
@@ -13,13 +11,12 @@ module.exports = {
         const queue = client.player.getQueue(message.guild.id);
 
         if (!queue || !queue.playing) return message.channel.send(`${message.author}, ${warning.posts.NotPlaying}`);
-
         if (!queue.previousTracks[1]) return message.channel.send(`${message.author}, nenhuma ${warning.posts.Sound} estava sendo tocada anteriormente`);
+        
+        controller.back(message.author.username)
 
         await queue.back();
 
-        message.channel.send(`Começando a tocar ${warning.posts.Sound} anterior...`);
-        
-        log.main(aliases, message.author.username, aliases.description)
+        message.channel.send(`Começando a tocar ${warning.posts.Sound} anterior...`);  
     },
 };

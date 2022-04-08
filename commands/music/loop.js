@@ -1,10 +1,6 @@
 const { QueueRepeatMode } = require('discord-player');
-const warning = require('../../config');
-const log = require('../../log/logCreator.js');
-const base = require('../../log/logDate.js');
-const aliases  = base.loop;
-const descp = '*';
-
+const warning = require('../../config/configBot');
+const controller = require("../../app/controllers/loop");
 
 module.exports = {
     name: 'loop',
@@ -15,8 +11,8 @@ module.exports = {
     execute(client, message, args) {
         const queue = client.player.getQueue(message.guild.id);
         
-        log.main(aliases, message.author.username, aliases.description);
- 
+        controller.loop(message.author.username)
+
 if (!queue || !queue.playing) return message.channel.send(`${message.author}, ${warning.posts.NotPlaying}`);
 
         if (args.join('').toLowerCase() === 'queue') {

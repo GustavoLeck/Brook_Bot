@@ -1,7 +1,5 @@
-const warning = require('../../config.js');
-const log = require('../../log/logCreator.js');
-const base = require('../../log/logDate.js');
-const aliases  = base.filter;
+const warning = require('../../config/configBot');
+const controller = require("../../app/controllers/filter");
 
 module.exports = {
     name: 'filter',
@@ -33,8 +31,8 @@ module.exports = {
         await queue.setFilters(filtersUpdated);
 
         message.channel.send(`Applied: **${filter}**, Filter Status: **${queue.getFiltersEnabled().includes(filter) ? 'Active' : 'Inactive'}** ✅\n **Remember, if the music is long, the filter application time may be longer accordingly.**`);
-
-        log.main(aliases, message.author.username, aliases.description)
+        
+        controller.filter(message.author.username)
     },
 
     

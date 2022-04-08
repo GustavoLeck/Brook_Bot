@@ -1,7 +1,5 @@
-const warning = require('../../config.js');
-const log = require('../../log/logCreator.js');
-const base = require('../../log/logDate.js');
-const aliases  = base.stop
+const warning = require('../../config/configBot');
+const controller = require("../../app/controllers/stop");
 
 module.exports = {
     name: 'stop',
@@ -18,6 +16,6 @@ module.exports = {
 
         message.channel.send(`Lista de reprocução cancelada.`);
 
-        log.main(aliases, message.author.username, aliases.description)
+        controller.stop(message.author.username)
     },
 };

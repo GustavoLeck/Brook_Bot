@@ -1,9 +1,7 @@
-const maxVol = require("../../config.js").opt.maxVol;
-const warning = require('../../config.js');
-const log = require('../../log/logCreator.js');
-const base = require('../../log/logDate.js');
-const aliases  = base.volume
+const maxVol = require("../../config/configBot").opt.maxVol;
+const warning = require('../../config/configBot');
 
+const controller = require("../../app/controllers/volume");
 module.exports = {
     name: 'volume',
     aliases: ['vol'],
@@ -13,7 +11,7 @@ module.exports = {
     execute(client, message, args) {
         const queue = client.player.getQueue(message.guild.id);
 
-        log.main(aliases, message.author.username, aliases.description)
+        controller.volume(message.author.username)
 
        if (!queue || !queue.playing) return message.channel.send(`${message.author}, ${warning.posts.NotPlaying}`);
 

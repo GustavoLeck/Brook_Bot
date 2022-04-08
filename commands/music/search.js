@@ -1,9 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const { QueryType } = require('discord-player');
-const log = require('../../log/logCreator.js');
-const base = require('../../log/logDate.js');
-const aliases  = base.search
-
+const controller = require("../../app/controllers/search");
 
 module.exports = {
     name: 'search',
@@ -73,7 +70,7 @@ if (!args[0]) return message.channel.send(`${message.author}, coloque o nome da 
             if (reason === 'time') return message.channel.send(`${message.author}, Song search time expired ❌`);
         });
 
-        log.main(aliases, message.author.username, aliases.description)
+        controller.search(message.author.username)
 
     },
 };

@@ -14,7 +14,7 @@
     "ms": "^3.0.0-canary.1",
     "mysql": "^2.18.1",
     "opusscript": "^0.0.8",
-    "ytdl-core": "^4.10.1"
+    "ytdl-core": "^4.11.0"
   },
   "engines": {
     "node": "16.x"
