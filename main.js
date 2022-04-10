@@ -1,6 +1,7 @@
 const { Player, Track } = require('discord-player');
 const { Client, Intents, Collection } = require('discord.js');
 const { readdirSync } = require('fs');
+const controller = require("./app/controllers/play");
 
 let client = new Client({
     
@@ -48,6 +49,7 @@ player.on('connectionError', (queue, error) => {
 player.on('trackStart', (queue, track) => {
     if (!client.config.opt.loopMessage && queue.repeatMode !== 0) return;
     queue.metadata.send(`Começando a tocar **${track.title}**\nCanal: **${queue.connection.channel.name}**`);
+    controller.playMusic(track, queue.connection.channel)
  });
 
 player.on('trackAdd', (queue, track) => {

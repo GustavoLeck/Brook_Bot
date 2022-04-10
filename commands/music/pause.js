@@ -14,8 +14,6 @@ module.exports = {
 
         const queue = client.player.getQueue(message.guild.id);
 
-        //log.main(aliases, message.author.username, aliases.description)
-
        if (!queue || !queue.playing) return message.channel.send(`${message.author}, ${warning.posts.NotPlaying}`);
 
         const success = queue.setPaused(true);

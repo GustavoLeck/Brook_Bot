@@ -8,5 +8,5 @@ module.exports.Musica = function(mysqlConnection, codigo, bot, server, canal_de_
 },
 
 module.exports.undefinedLog = function(mysqlConnection, bot, autor, title){
-    mysqlConnection.query(`INSERT INTO LOG (CODIGO, BOT, NOME, AUTOR, DATE, TIME, DESCRICAO) VALUES ('9', '${bot}', 'Ping', '${autor}', current_date(), current_time(), '${title}')`)
+    mysqlConnection.query(`INSERT INTO LOG (CODIGO, BOT, NOME, AUTOR, DATE, TIME, DESCRICAO) VALUES ('9', '${bot}', 'Play', '${autor}', current_date(), current_time(), '${title}')`)
 }

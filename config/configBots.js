@@ -1,9 +1,9 @@
 module.exports={
     bot_brook:{
-        token:"OTEzMTU0NjI1MjM3MDUzNTUx.YZ6XhA.c7_t3mZMSdUjf8cx7ygxP5cMuSk",
+        token:"",
         prefix:"-"
     },
     bot_sua_mana:{  
-        token:"OTQzMjc2OTk4NjgyMzcwMDk4.YgwtKQ.JjlqqBSCVlwjlxn1qAAL78TbSP0",
+        token:"",
         prefix:"!"
     }}

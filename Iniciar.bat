@@ -1,3 +1,3 @@
-color 5f
+color 4
 cls
 node .

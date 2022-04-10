@@ -7,7 +7,7 @@ module.exports = {
     utilisation: '{prefix}play [song name/URL]',
     voiceChannel: true,
     titulo: null,
-
+   
     async execute(client, message, args) {
 if (!args[0]) return message.channel.send(`${message.author}, escreva o nome, ou coloque o link que você deseja ouvir depois do comando.`);
 
@@ -35,6 +35,7 @@ if (!args[0]) return message.channel.send(`${message.author}, escreva o nome, ou
 
         if (!queue.playing) await queue.play();
 
-        controller.play(res.tracks[0], queue.connection.channel, message.author.username)
-    },              
-};
+        controller.playLog(res.tracks[0], message.author.username)
+    },
+    
+}; 
