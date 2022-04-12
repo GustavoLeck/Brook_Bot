@@ -1,13 +1,14 @@
-const mysql = require('mysql');
 
-const connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "BobMarley#1981.,",
-    database: "music_bot"
-    })
+
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
 module.exports.connection = function(){
-    console.log(`Connection with DB require...`)
-    return connection
-} 
+mongoose.connect('mongodb+srv://Bot:Super_Senha481526@cluster0.sgfic.mongodb.net/test').then(()=>{
+    console.log("=> DB Connected.")}).catch((err)=>{
+        console.log("=>DB não conectado: "+err)
+    })
+}
+    
+    
+

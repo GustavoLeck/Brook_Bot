@@ -1,12 +1,15 @@
-const mysql = require("../../config/connectionDB");
-const model = require("../models/loop");
-const bot = require("../../config/configBot")
+const model = require("../models/Log");
+const bot = require("../../config/configBot");
+const tempo = require("../validators/time")
 
 module.exports.loop = function(usuario){
 
-  var mysqlConnection = mysql.connection();
-
-    model.Log(mysqlConnection, bot.name, usuario)
-    console.log(`   =>Registro inserido na tabela LOG: Comando Loop`)
+  var log= {
+    Bot: bot.name,
+    Nome: 'Loop',
+    Autor: usuario,
+    Date: tempo.data(),
+    Hora: tempo.hora()
+ };
+  model.Log(log)
 }
-

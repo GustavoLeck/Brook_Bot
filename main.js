@@ -2,6 +2,7 @@ const { Player, Track } = require('discord-player');
 const { Client, Intents, Collection } = require('discord.js');
 const { readdirSync } = require('fs');
 const controller = require("./app/controllers/play");
+const mongo = require("./config/connectionDB")
 
 let client = new Client({
     
@@ -16,7 +17,7 @@ let client = new Client({
 
 client.config = require('./config/configBot');
 client.player = new Player(client, client.config.opt.discordPlayer);
-
+mongo.connection();
 
 client.commands = new Collection();
 const player = client.player

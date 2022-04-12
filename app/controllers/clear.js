@@ -1,12 +1,15 @@
-const mysql = require("../../config/connectionDB");
-const model = require("../models/clear");
-const bot = require("../../config/configBot")
+const model = require("../models/Log");
+const bot = require("../../config/configBot");
+const tempo = require("../validators/time")
 
 module.exports.clear = function(usuario){
 
-  var mysqlConnection = mysql.connection();
-
-    model.Log(mysqlConnection, bot.name, usuario)
-    console.log(`   =>Registro inserido na tabela LOG: Comando Clear`)
+  var log= {
+    Bot: bot.name,
+    Nome: 'Clear',
+    Autor: usuario,
+    Date: tempo.data(),
+    Hora: tempo.hora()
+ };
+  model.Log(log)
 }
-
