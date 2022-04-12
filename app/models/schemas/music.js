@@ -38,9 +38,9 @@ const Valor = new Schema({
         type: 'String',
         require: true
     },
-    Date:{
+    Data:{
         type: 'Date',
-        dafault: Date.now()
+        require: true
     },
     Hora:{
         type: 'String',

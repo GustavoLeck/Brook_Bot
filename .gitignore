@@ -1,4 +1,6 @@
 config\configBots.js
 node_modules
 package-lock
+.env
+
 

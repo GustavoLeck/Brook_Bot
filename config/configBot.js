@@ -1,8 +1,8 @@
-const acesso = require('./configBots')
+require("dotenv").config();
 
 module.exports = {
-        TOKEN: acesso.bot_brook.token, //your discord bot token
-        px: acesso.bot_brook.prefix,
+        TOKEN: process.env.TOKEN_BOT, //your discord bot token
+        px: process.env.PREFIX,
         name: "Brook",
 
     opt: {
