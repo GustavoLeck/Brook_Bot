@@ -4,7 +4,7 @@
   "author": "Umut Bayraktar",
   "description": "Discord.js V13 Compatible Umut Bayraktar Youtube Private Music Bot Codes for Shared on GitHub!",
   "scripts": {
-    "start": "node index"
+    "start": "node ."
   },
   "dependencies": {
     "discord-player": "^5.2.0",
