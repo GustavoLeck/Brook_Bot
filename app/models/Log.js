@@ -4,9 +4,9 @@ const Log = mongoose.model('Log')
 
 module.exports.Log = function(valor){
 
-    new Log(valor).save().then(()=>{
+    new Log(valor).save().then(() => {
         console.log(`   =>Registro de log inserido: Comando ${valor.Nome}`)
-    }).catch((err)=>{
+    }).catch((err) => {
         console.log("Erro ao registrar Log: "+err)
     })
 }

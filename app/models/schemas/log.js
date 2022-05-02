@@ -14,7 +14,7 @@ const log = new Schema({
         type: 'String',
         require: true
     },
-    Date:{
+    Data:{
         type: 'String',
         require: true
     },
