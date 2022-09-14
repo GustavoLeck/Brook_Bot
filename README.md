@@ -1,14 +1,8 @@
 # Brook_Bot
-Bot Discord iniciado em 20/12/2021
+🤖 Bot Discord iniciado em 20/12/2021 🤖
 
-Bibliotecas:
+Projeto de BOT de musica para o Discord, criado para utilizar durante madrugadas de jogatinas com os amigos :D
 
- discord-player@5.2.0
- discord.js@13.5.1
- express@4.17.2
- ffmpeg-static@4.4.1
- ms@3.0.0-canary.1
- mysql@2.18.1
- nodemon@2.0.15
- opusscript@0.0.8
-ytdl-core@4.10.1
+A ideia inicial do projeto foi ter meu propro Bot  de música, pois os que já existiam estavam sendo derrubados pelo Google, apor conta disso, criei meu próprio!!
+
+Hoje ele reproduz faixas do YouTube, Spotify e SoundCloud, armazena logs em um banco não relacional ao qual faço consultas para verificar o historico de reprodução, quantos usuários utilizam e em quantos servidores está adicionado. Atrávez dos logs gerados monitoro possiveis erros para realizar manutenção se necessário.
